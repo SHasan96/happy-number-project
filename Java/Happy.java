@@ -25,7 +25,7 @@ public class Happy {
     catch (Exception e){ 
       System.out.println("Error! Please make sure your inputs are valid.");
     }
-	}
+  }
 	
 //Function to determine if a number is happy (code taken from "rosetta.org")	
   public static boolean happy(int number){
@@ -51,12 +51,12 @@ public class Happy {
       System.out.println("Invalid range and/or arguments!");
       return;
 		}
-		//Reverse the arguments if necessary to always get a positive difference
-		if (n2<n1) {
-			int tmp = n1;
-			n1 = n2;
-			n2 = tmp;
-		} 
+    //Reverse the arguments if necessary to always get a positive difference
+    if (n2<n1) {
+      int tmp = n1;
+		  n1 = n2;
+		  n2 = tmp;
+    } 
 		//This TreeMap will store norm and happy numbers as key-value pairs in descending order of keys
 		Map<Double, Integer> map = new TreeMap<Double, Integer>(Collections.reverseOrder());
 		
@@ -90,7 +90,7 @@ public class Happy {
       hnum = m;
       norm += hnum*hnum;
     }
-		norm = Math.sqrt(norm);
-		return norm;
-	}
+    norm = Math.sqrt(norm);
+    return norm;
+  }
 }
