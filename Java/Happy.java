@@ -68,18 +68,18 @@ public class Happy {
         }
         
         if (map.isEmpty())
-        	System.out.println("NOBODY'S HAPPY!");
+        	  System.out.println("NOBODY'S HAPPY!");
         
         else {
-        	Iterator<Entry<Double, Integer>> itr = map.entrySet().iterator();
-        	int i = 1;
-        	while (itr.hasNext() && i<=10) {
-                Entry<Double, Integer> entry = itr.next();
-        		    System.out.println(entry.getValue());
-        		    i++;
-        	 }
-        }
-	}
+        	  Iterator<Entry<Double, Integer>> itr = map.entrySet().iterator();
+        	  int i = 1;
+        	  while (itr.hasNext() && i<=10) {
+                  Entry<Double, Integer> entry = itr.next();
+        		      System.out.println(entry.getValue());
+        		      i++;
+        	   }
+         }
+   }
 
 //Function to find the norm of a happy number
 	public static double getNorm (int hnum) {
