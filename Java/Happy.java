@@ -23,7 +23,7 @@ public class Happy {
           happyNumbersInRange(arg1, arg2);
       }
       catch (Exception e){ 
-          System.out.println(e);
+          System.out.println("Error! Please make sure your inputs are valid.");
       }
 	}
 	
@@ -75,9 +75,9 @@ public class Happy {
         	int i = 1;
         	while (itr.hasNext() && i<=10) {
                 Entry<Double, Integer> entry = itr.next();
-        		System.out.println(entry.getValue());
-        		i++;
-        	}
+        		    System.out.println(entry.getValue());
+        		    i++;
+        	 }
         }
 	}
 
@@ -85,12 +85,10 @@ public class Happy {
 	public static double getNorm (int hnum) {
 		double norm = hnum*hnum;
 		int m = 0;
-		int digit = 0;
 		while(hnum != 1){
 	          m = 0;
 	          while(hnum > 0){
-	              digit = hnum % 10;
-	              m += digit*digit;
+	              m += (hnum % 10)*(hnum % 10);
 	              hnum /= 10;
 	          }
 	          hnum = m;
