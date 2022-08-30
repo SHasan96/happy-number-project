@@ -46,20 +46,20 @@ public class Happy {
 
 //Function to find all the happy numbers between the two arguments (inclusive)
   public static void happyNumbersInRange (int n2, int n1) {
-		//Check if difference between two arguments is zero, also to reject negative integers
+    //Check if difference between two arguments is zero, also to reject negative integers
     if (n2==n1 || n2<0 || n1<0) {
       System.out.println("Invalid range and/or arguments!");
       return;
-		}
+    }
     //Reverse the arguments if necessary to always get a positive difference
     if (n2<n1) {
       int tmp = n1;
-		  n1 = n2;
-		  n2 = tmp;
+      n1 = n2;
+      n2 = tmp;
     } 
-		//This TreeMap will store norm and happy numbers as key-value pairs in descending order of keys
-		Map<Double, Integer> map = new TreeMap<Double, Integer>(Collections.reverseOrder());
-		
+    //This TreeMap will store norm and happy numbers as key-value pairs in descending order of keys
+    Map<Double, Integer> map = new TreeMap<Double, Integer>(Collections.reverseOrder());
+
     for(int num = n1, count = 0; count<=(n2-n1); count++, num++){
       if(happy(num)) 
         map.put(getNorm(num), num);    
@@ -67,9 +67,9 @@ public class Happy {
     if (map.isEmpty())
       System.out.println("NOBODY'S HAPPY!");
     else {
- 	    Iterator<Entry<Double, Integer>> itr = map.entrySet().iterator();
-   	  int i = 1;
-   	  while (itr.hasNext() && i<=10) {
+      Iterator<Entry<Double, Integer>> itr = map.entrySet().iterator();
+      int i = 1;
+      while (itr.hasNext() && i<=10) {
         Entry<Double, Integer> entry = itr.next();
         System.out.println(entry.getValue());
         i++;
