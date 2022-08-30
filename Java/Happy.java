@@ -45,7 +45,7 @@ public class Happy {
   }
 
 //Function to find all the happy numbers between the two arguments (inclusive)
-  public static void happyNumbersInRange (int n2, int n1) {
+  public static void happyNumbersInRange (int n2, int n1){
     //Check if difference between two arguments is zero, also to reject negative integers
     if (n2==n1 || n2<0 || n1<0) {
       System.out.println("Invalid range and/or arguments!");
@@ -78,7 +78,7 @@ public class Happy {
   }
 
 //Function to find the norm of a happy number
-  public static double getNorm (int hnum) {
+  public static double getNorm (int hnum){
     double norm = hnum*hnum;
     int m = 0;
     while(hnum != 1){
