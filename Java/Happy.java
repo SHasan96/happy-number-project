@@ -18,12 +18,10 @@ public class Happy {
       System.out.print("Enter second argument (another whole number): ");
       int arg2 = scan.nextInt();
       scan.close();
-      System.out.println("\nFirst Argument: " + arg1);
-      System.out.println("Second Argument: " + arg2);
-      happyNumbersInRange(arg1, arg2);
+      checkArgs(arg1, arg2);
     }
     catch (Exception e){ 
-      System.out.println("Error! Please make sure your inputs are valid.");
+      System.out.println("Invalid range and/or arguments!\nExiting...");
     }
   }
 	
@@ -43,20 +41,27 @@ public class Happy {
     }
     return number == 1;
   }
-
-//Function to find all the happy numbers between the two arguments (inclusive)
-  public static void happyNumbersInRange (int n2, int n1){
+  
+//Function to check the arguments
+  public static void checkArgs(int n1, int n2){
     //Check if difference between two arguments is zero, also to reject negative integers
     if (n2==n1 || n2<0 || n1<0) {
-      System.out.println("Invalid range and/or arguments!");
+      System.out.println("Invalid range and/or arguments!\nExiting...");
       return;
     }
+    System.out.println("\nFirst Argument: " + n1);
+    System.out.println("Second Argument: " +  n2);
     //Reverse the arguments if necessary to always get a positive difference
     if (n2<n1) {
       int tmp = n1;
       n1 = n2;
       n2 = tmp;
-    } 
+    }
+    happyNumbersInRange(n2, n1);
+  }      
+
+//Function to find all the happy numbers between the two arguments (inclusive)
+  public static void happyNumbersInRange (int n2, int n1){
     //This TreeMap will store norm and happy numbers as key-value pairs in descending order of keys
     Map<Double, Integer> map = new TreeMap<Double, Integer>(Collections.reverseOrder());
 
