@@ -28,7 +28,7 @@ class Program {
       Determine if a number is happy.
       Return a boolean based on the determination.
     */
-    static bool happy(int number) {
+    static bool isHappy(int number) {
         int m = 0;
         HashSet<int> cycle = new HashSet<int>();
         while (number != 1 && cycle.Add(number)) {
@@ -49,7 +49,7 @@ class Program {
     static void checkArgs(int n1, int n2) {
         //Check if difference between two arguments is zero, also to reject negative integers.
         if (n2 == n1 || n2 < 0 || n1 < 0) {
-            Console.WriteLine("\nInvalid range and/or arguments!\nExiting...\n");
+            Console.WriteLine("\nInvalid range and/or arguments!\nExiting...");
             return;
         }
         Console.WriteLine("\nFirst Argument: " + n1);
@@ -73,12 +73,13 @@ class Program {
         var dict = new SortedDictionary<double, int>();
         
         for (int num = n1; num<=n2; num++) {
-            if (happy(num)) {
+            if (isHappy(num)) {
+                //Console.WriteLine(getNorm(num)+"--------"+num);
                 dict.Add(getNorm(num), num);
             }
         }
         if (dict.Count == 0) {
-            Console.WriteLine("NOBODY'S HAPPY!\n");
+            Console.WriteLine("NOBODY'S HAPPY!");
         } else {
             int i = 0;
             foreach (var x in dict.Reverse()) {
@@ -88,16 +89,17 @@ class Program {
                     break;
                 }
             }
-            Console.WriteLine();
         }
+        Console.WriteLine();
     }
 
     /* 
       Find and return the norm of a happy number.
     */
-    static double getNorm(int hnum) {
-        double norm = hnum * hnum;
-        int m = 0;
+    static double getNorm(int hn) {
+        long hnum = hn;
+        long sum = hnum*hnum;
+        long m = 0;
         while (hnum != 1) {
             m = 0;
             while (hnum > 0) {
@@ -105,9 +107,9 @@ class Program {
                 hnum /= 10;
             }
             hnum = m;
-            norm += hnum * hnum;
+            sum += hnum * hnum;
         }
-        norm = Math.Sqrt(norm);
+        double norm = Math.Sqrt(sum);
         return norm;
     }
 }
