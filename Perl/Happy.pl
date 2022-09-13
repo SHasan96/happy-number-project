@@ -70,7 +70,7 @@ sub checkargs {
   happy_numbers_in_range($n1, $n2);
 }
 
-# Get an input abd return it if it is an integer
+# Get an input and return it if it is an integer
 # Reference: "https://www.oreilly.com/library/view/perl-cookbook/1565922433/ch02s02.html"
 sub getinp {
   my $inp = <>;
