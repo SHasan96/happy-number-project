@@ -34,7 +34,7 @@ public class Happy {
   @return a boolean based on the determination.
 */
   public static boolean happy(int number) {
-    int m = 0;
+    int m = 0; 
     HashSet<Integer> cycle = new HashSet<Integer>();
     while(number != 1 && cycle.add(number)) {
       m = 0;
@@ -53,7 +53,7 @@ public class Happy {
   @param n1 - first integer argument.
   @param n2 - second integer argument.
 */
-  public static void checkArgs(int n1, int n2){
+  public static void checkArgs(int n1, int n2) {
     //Check if difference between two arguments is zero, also to reject negative integers.
     if (n2==n1 || n2<0 || n1<0) {
       System.out.println("\nInvalid range and/or arguments!\nExiting...\n");
@@ -79,7 +79,7 @@ public class Happy {
     //This TreeMap will store norm and happy numbers as key-value pairs in descending order of keys.
     Map<Double, Integer> map = new TreeMap<Double, Integer>(Collections.reverseOrder());
 
-    for(int num = n1; num<=n2; num++){
+    for(int num = n1; num<=n2; num++) {
       if(happy(num)) {
         map.put(getNorm(num), num);    
       }
@@ -101,22 +101,25 @@ public class Happy {
 
 /**
   Find the norm of a happy number.
-  @param hnum - a happy number.
+  @param hn - a happy number.
   @return the norm of the happy number passed in.
 */
-  public static double getNorm (int hnum){
-    double norm = hnum*hnum;
-    int m = 0;
-    while(hnum != 1){
+  public static double getNorm (int hn) {
+    /* It is neccessary to use long integers because sums of squares for large arguments can be 
+       big enough to cause overflow and return NaN.*/
+    long hnum = hn;
+    long sum = hnum*hnum;
+    long m = 0;
+    while(hnum != 1) {
       m = 0;
-      while(hnum > 0){
+      while(hnum > 0) {
         m += (hnum % 10)*(hnum % 10);
         hnum /= 10;
       }
       hnum = m;
-      norm += hnum*hnum;
+      sum += hnum*hnum;
     }
-    norm = Math.sqrt(norm);
+    double norm = Math.sqrt(sum);
     return norm;
   }
 }
