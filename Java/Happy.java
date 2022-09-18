@@ -33,7 +33,7 @@ public class Happy {
   @param number - is a positive integer.
   @return a boolean based on the determination.
 */
-  public static boolean happy(int number) {
+  public static boolean isHappy(int number) {
     int m = 0; 
     HashSet<Integer> cycle = new HashSet<Integer>();
     while(number != 1 && cycle.add(number)) {
@@ -80,7 +80,7 @@ public class Happy {
     Map<Double, Integer> map = new TreeMap<Double, Integer>(Collections.reverseOrder());
 
     for(int num = n1; num<=n2; num++) {
-      if(happy(num)) {
+      if(isHappy(num)) {
         map.put(getNorm(num), num);    
       }
     }
