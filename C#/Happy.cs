@@ -49,7 +49,7 @@ class Program {
     static void checkArgs(int n1, int n2) {
         //Check if difference between two arguments is zero, also to reject negative integers.
         if (n2 == n1 || n2 < 0 || n1 < 0) {
-            Console.WriteLine("\nInvalid range and/or arguments!\nExiting...");
+            Console.WriteLine("\nInvalid range and/or arguments!\nExiting...\n");
             return;
         }
         Console.WriteLine("\nFirst Argument: " + n1);
@@ -74,7 +74,6 @@ class Program {
         
         for (int num = n1; num<=n2; num++) {
             if (isHappy(num)) {
-                //Console.WriteLine(getNorm(num)+"--------"+num);
                 dict.Add(getNorm(num), num);
             }
         }
