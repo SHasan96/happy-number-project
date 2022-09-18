@@ -6,7 +6,8 @@ use List::Util qw(sum);
 use Math::Complex;
 
 
-# Check if a number is happy (Reference: "rosettacode.org") 
+# Check if a number is happy 
+# Reference: "rosettacode.org"
 sub ishappy {
   my $s = shift;
   while ($s > 6 && $s != 89) {
@@ -47,7 +48,7 @@ sub happy_numbers_in_range {
     foreach my $num (reverse sort {$numpairs{$a} <=> $numpairs{$b}} keys %numpairs) {
       print "$num\n";
       $j++;
-      if ($j>10){
+      if ($j>10) {
         last;
       }
     }
@@ -58,7 +59,7 @@ sub happy_numbers_in_range {
 # Check validity of input arguments before passing them on 
 sub checkargs {
   my ($n1, $n2) = (shift, shift);
-  if ($n1==$n2 || $n1<0 || $n2<0){
+  if ($n1==$n2 || $n1<0 || $n2<0) {
     print "\nInvalid range and/or arguments!\nExiting...\n\n";
     return;
   }
@@ -81,7 +82,7 @@ sub getinp {
     } else {
       return $inp;
     }
-  }else { 
+  } else { 
     print "\nInvalid range and/or arguments!\nExiting...\n\n";
     exit;
   } 
