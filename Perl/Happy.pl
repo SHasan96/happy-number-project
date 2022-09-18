@@ -78,7 +78,7 @@ sub getinp {
   chomp($inp);
   if ($inp =~ /^[+-]?\d+$/) { 
     if ($inp>0) {
-      return abs($inp);
+      return abs($inp); # Accept and ignore '+' sign
     } else {
       return $inp;
     }
