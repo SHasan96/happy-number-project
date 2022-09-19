@@ -112,19 +112,19 @@ func checkArgs(n1 int, n2 int) {
 func happyNumbersInRange(n1 int, n2 int) {
   // Using a map to store norm-happy number as key-value pairs
   numMap := make(map[float64]int)
-	for num := n1; num <= n2; num++ {
-		if isHappy(num) {
-			numMap[getNorm(num)] = num
-		}
-	}
+  for num := n1; num <= n2; num++ {
+    if isHappy(num) {
+    numMap[getNorm(num)] = num
+    }
+  }
   if len(numMap) == 0 {
     fmt.Println("NOBODY'S HAPPY!")
   } else {
     // Make a slice of the keys (which are the norms).
     var keys []float64
     for k := range numMap {
-			keys = append(keys, k)
-		}
+      keys = append(keys, k)
+    }
     // Sort the slice in descending order.
     sort.Sort(sort.Reverse(sort.Float64Slice(keys)))
     if len(keys) > 10 {
