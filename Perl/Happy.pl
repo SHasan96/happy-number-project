@@ -1,3 +1,5 @@
+#!/usr/bin/perl
+
 # Happy number project
 use strict;
 use warnings;
@@ -88,6 +90,7 @@ sub getinp {
   } 
 }
 
+# Main starts here
 
 print "\nEnter first argument (a whole number): ";
 my $a1 = getinp();
