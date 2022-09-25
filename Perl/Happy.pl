@@ -8,8 +8,8 @@ use List::Util qw(sum);
 use Math::Complex;
 
 
-# Check if a number is happy 
-# Reference: "rosettacode.org"
+# Check if a number is happy. 
+# Reference: "rosettacode.org".
 sub ishappy {
   my $s = shift;
   while ($s > 6 && $s != 89) {
@@ -18,7 +18,7 @@ sub ishappy {
   return $s == 1;
 }
 
-# Get the norm of a happy number
+# Get the norm of a happy number.
 sub getnorm {
   my $n = shift;
   my $norm = $n**2;
@@ -30,10 +30,10 @@ sub getnorm {
   return $norm;
 }
 
-# Find happy numbers in a given range (inclusive) and print them in descending order of norms 
+# Find happy numbers in a given range (inclusive) and print them in descending order of norms. 
 sub happy_numbers_in_range {
   my ($n1, $n2) = (shift, shift);
-  # Using a hash to store happy numbers and norms as key-value pairs
+  # Using a hash to store happy numbers and norms as key-value pairs.
   my %numpairs;
   for (my $i = $n1; $i<=$n2; $i++) {
     if (ishappy($i)) {
@@ -45,8 +45,8 @@ sub happy_numbers_in_range {
     print "NOBODY'S HAPPY!\n";
   } else {   
     my $j = 1; 
-    # Sort the keys of the hash according to the values (hash keys are strings)
-    # Reference: "https://www.geeksforgeeks.org/sorting-hash-in-perl/"
+    # Sort the keys of the hash according to the values. (Hash keys are strings).
+    # Reference: "https://www.geeksforgeeks.org/sorting-hash-in-perl/".
     foreach my $num (reverse sort {$numpairs{$a} <=> $numpairs{$b}} keys %numpairs) {
       print "$num\n";
       $j++;
@@ -58,7 +58,7 @@ sub happy_numbers_in_range {
   print "\n"; 
 }
 
-# Check validity of input arguments before passing them on 
+# Check validity of input arguments before passing them on. 
 sub checkargs {
   my ($n1, $n2) = (shift, shift);
   if ($n1==$n2 || $n1<0 || $n2<0) {
@@ -73,14 +73,14 @@ sub checkargs {
   happy_numbers_in_range($n1, $n2);
 }
 
-# Get an input and return it if it is an integer
-# Reference: "https://www.oreilly.com/library/view/perl-cookbook/1565922433/ch02s02.html"
+# Get an input and return it if it is an integer.
+# Reference: "https://www.oreilly.com/library/view/perl-cookbook/1565922433/ch02s02.html".
 sub getinp {
   my $inp = <>;
   chomp($inp);
   if ($inp =~ /^[+-]?\d+$/) { 
     if ($inp>0) {
-      return abs($inp); # Accept and ignore '+' sign
+      return abs($inp); # Accept and ignore '+' sign.
     } else {
       return $inp;
     }
@@ -90,7 +90,7 @@ sub getinp {
   } 
 }
 
-# Main starts here
+# Main starts here.
 
 print "\nEnter first argument (a whole number): ";
 my $a1 = getinp();
