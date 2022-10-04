@@ -99,7 +99,7 @@ end function find_norm
 
 !> Subroutine that appends an element to a list.
 !! @param list - an array
-!! @param element - an elemet for the array (a structure
+!! @param element - an element for the array (a structure
 !!   in this case)
 !! @note This is necessassy for maintaining a dynamic array 
 !!   and be memory efficient. Elements are added in the 
