@@ -204,15 +204,15 @@ function  find_maximum(arr, start, finish) result(maxpos)
   integer                                  :: location, i, maxpos
   double precision                         :: maximum
 
-  maximum  = arr(start)%norm		        ! Assume the first is the max
-  location = start			                ! Record its position
-  do i = start+1, finish	              ! Start with next element
-    if (arr(i)%norm > maximum) then	    ! Is arr(i) less than the min?
-      maximum  = arr(i)%norm		        ! Yes, a new minimum found
-      location = i                      ! Record its position
+  maximum  = arr(start)%norm              ! Assume the first is the maximum
+  location = start                        ! Record its position
+  do i = start+1, finish                  ! Start with next element
+    if (arr(i)%norm > maximum) then       ! Is arr(i) greater than the maximum?
+      maximum  = arr(i)%norm              ! Yes, a new maximum found
+      location = i                        ! Record its position
     end if
   end do
-  maxpos = location        	            ! Return the position
+  maxpos = location                       ! Return the position
 end function  find_maximum
 
 !> Subroutine that swaps the values of its two arguments.
@@ -239,9 +239,9 @@ subroutine  sort(arr, size)
   integer, intent(in)                         :: size
   integer                                     :: i, location
 
-  do i = 1, size-1			                      ! Exclude for the last
-    location = find_maximum(arr, i, size)	    ! Find maximum from this to last
-    call swap(arr(i), arr(location))	        ! Swap this and the maximum
+  do i = 1, size-1                              ! Exclude the last
+    location = find_maximum(arr, i, size)       ! Find maximum from this to last
+    call swap(arr(i), arr(location))            ! Swap this and the maximum
   end do
 end subroutine sort
 
