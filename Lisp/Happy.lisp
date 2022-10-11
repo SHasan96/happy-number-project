@@ -72,7 +72,7 @@
         (t (format t "NOBODY'S HAPPY!~%"))))  ; no happy number
 
  
-;;; Function
+;;; Function to check if an argument is an integer
 (defun check-for-int (n)
   (unless (typep n 'integer)
     (format t "~%Invalid range and/or arguments! ~%Exiting...~%~%")
