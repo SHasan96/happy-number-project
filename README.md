@@ -23,10 +23,11 @@ Finally the happy numbers correspoding these norms were printed out (with the ma
 within the range a message stating that is printed.)
 
 ## Compilation and execution instructions
+
 The names of all source code files were Happy plus the appropriate file extension.
 Listed in order in which they appear in the repo we have the following.
 
-# C\#
+### C\#
 To compile:
 ```
 mcs Happy.cs
@@ -37,12 +38,13 @@ To run:
 mono Happy.exe
 ```
 
-# C
+### C
 To compile:
 ```
 gcc Happy.c -o Happy -lm
 ```
-An executable with a the name "Happy" is created. The -lm portion must be used to link the math library when building the executable.
+An executable with a the name "Happy" is created. 
+The -lm portion must be used to link the math library when building the executable.
 To run:
 ```
 ./Happy
@@ -52,7 +54,7 @@ or simply:
 Happy
 ```
 
-# Fortran
+### Fortran
 To compile:
 ```
 gfortran Happy.f95 -o Happy
@@ -66,4 +68,95 @@ or simply:
 ```
 Happy
 ```
+
+### Go
+To compile and execute:
+```
+go run Happy.go
+```
+
+### Java 
+To compile:
+```
+javac Happy.java
+```
+A Happy.class file is created.
+To run:
+```
+java Happy
+```
+
+### Lisp
+Due to lack of proficiency with the SBCL IDE, the program was written as a script which were made executable.
+Add the following line at the top to invoke the SBCL environment:
+```
+#!/usr/bin/sbcl --script
+```
+Make the lisp file executable for the user by:
+```
+chmod u+x Happy.lisp
+```
+Then, run using:
+```
+./Happy.lisp
+```
+or just
+```
+Happy.lisp
+```
+
+### Perl
+Also written as an executable script.
+Add this line at the top:
+```
+#!/usr/bin/perl
+```
+Make the perl file executable for the user by:
+```
+chmod u+x Happy.pl
+```
+Then, run using:
+```
+./Happy.pl
+```
+or just
+```
+Happy.pl
+```
+Perl is an interpreted language, which means that your code can be run as-is, without a compilation stage that creates a non-portable executable program.
+Alternatively, this also works:
+```
+perl Happy.pl
+```
+
+### Python
+Also written as an executable script.
+Add this line at the top:
+```
+#!/usr/bin/env python3
+```
+Make the perl file executable for the user by:
+```
+chmod u+x Happy.py
+```
+Then, run using:
+```
+./Happy.py
+```
+or just
+```
+Happy.py
+```
+Python is an interpreted language.
+Alterantively, we can use:
+```
+python3 Happy.py
+```
+
+## References:
+For tutorial sources such as tutorialspoint, w3schools, youtube, geeks-for-geeks, etc. were used.
+Some code snippets were used from rossettacode.org, particularly the function to determine if a number is happy.
+Some code ideas were taken from stackoverflow, etc, and changed to fit the program.
+
+Code used directly or indirectly from sources were commented with a "Reference:" header.
 
