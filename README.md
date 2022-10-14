@@ -32,7 +32,7 @@ To compile:
 ```
 mcs Happy.cs
 ```
-A Happy.exe file is created.
+A Happy.exe file is created.\
 To run:
 ```
 mono Happy.exe
@@ -44,7 +44,7 @@ To compile:
 gcc Happy.c -o Happy -lm
 ```
 An executable with a the name "Happy" is created. 
-The -lm portion must be used to link the math library when building the executable.
+The -lm portion must be used to link the math library when building the executable.\
 To run:
 ```
 ./Happy
@@ -59,7 +59,7 @@ To compile:
 ```
 gfortran Happy.f95 -o Happy
 ```
-An executable with a the name "Happy" is created.
+An executable with a the name "Happy" is created.\
 To run:
 ```
 ./Happy
@@ -80,14 +80,14 @@ To compile:
 ```
 javac Happy.java
 ```
-A Happy.class file is created.
+A Happy.class file is created.\
 To run:
 ```
 java Happy
 ```
 
 ### Lisp
-Due to lack of proficiency with the SBCL IDE, the program was written as a script which were made executable.
+Due to lack of proficiency with the SBCL IDE, the program was written as a script which were made executable.\
 Add the following line at the top to invoke the SBCL environment:
 ```
 #!/usr/bin/sbcl --script
@@ -106,7 +106,7 @@ Happy.lisp
 ```
 
 ### Perl
-Also written as an executable script.
+Also written as an executable script.\
 Add this line at the top:
 ```
 #!/usr/bin/perl
@@ -123,14 +123,14 @@ or just
 ```
 Happy.pl
 ```
-Perl is an interpreted language, which means that your code can be run as-is, without a compilation stage that creates a non-portable executable program.
+Perl is an interpreted language, which means that your code can be run as-is, without a compilation stage that creates a non-portable executable program.\
 Alternatively, this also works:
 ```
 perl Happy.pl
 ```
 
 ### Python
-Also written as an executable script.
+Also written as an executable script.\
 Add this line at the top:
 ```
 #!/usr/bin/env python3
@@ -147,7 +147,7 @@ or just
 ```
 Happy.py
 ```
-Python is an interpreted language.
+Python is an interpreted language.\
 Alterantively, we can use:
 ```
 python3 Happy.py
@@ -157,6 +157,5 @@ python3 Happy.py
 For tutorial sources such as tutorialspoint, w3schools, youtube, geeks-for-geeks, etc. were used.
 Some code snippets were used from rossettacode.org, particularly the function to determine if a number is happy.
 Some code ideas were taken from stackoverflow, etc, and changed to fit the program.
-
 Code used directly or indirectly from sources were commented with a "Reference:" header.
 
